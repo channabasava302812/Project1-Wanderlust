@@ -78,16 +78,6 @@ app.use((req,res,next)=>{
     next();
 })
 
-// app.get("/Demouser", async(req,res)=>{
-//     let fakeUser = new User({
-//         email: "student@gmail.com",
-//         username:"delta-student",
-//     });
-
-//     let registeredUser = await User.register(fakeUser,"helloworld");
-//     res.send(registeredUser);
-// })
-
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
@@ -106,4 +96,7 @@ app.listen(8080,()=>{
     console.log("server working to port 8080");
 });
 
+app.get('/', (req, res) => {
+  res.render('/listings'); // assuming you have a 'home.ejs' in your views folder
+});
 
