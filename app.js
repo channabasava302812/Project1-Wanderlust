@@ -97,6 +97,6 @@ app.listen(8080,()=>{
 });
 
 app.get('/', (req, res) => {
-  res.render("listings/index"); // assuming you have a 'home.ejs' in your views folder
+  res.redirect("/listings"); // assuming you have a 'home.ejs' in your views folder
 });
 
